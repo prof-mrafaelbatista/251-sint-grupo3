@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import json
@@ -15,7 +18,7 @@ try:
         # Apenas configure se a chave existir
         print("INFO: Variável de ambiente GEMINI_API_KEY encontrada. Configurando a API do Gemini...")
         genai.configure(api_key=API_KEY_GEMINI)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-2.0-flash')
         print("INFO: API do Gemini configurada com sucesso.")
 except Exception as e:
     print(f"ERRO CRÍTICO ao configurar a API do Gemini: {e}")
