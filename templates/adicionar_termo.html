@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ page_title }}</h1>
+
+    {% if erro %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ erro }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('adicionar_termo') }}" class="mt-4">
+        <div class="mb-3">
+            <label for="termo" class="form-label">Termo</label>
+            <input type="text" class="form-control" id="termo" name="termo" value="{{ termo_preenchido or '' }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="definicao" class="form-label">Definição</label>
+            <textarea class="form-control" id="definicao" name="definicao" rows="3" required>{{ definicao_preenchida or '' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Termo</button>
+        <a href="{{ url_for('dicionario') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

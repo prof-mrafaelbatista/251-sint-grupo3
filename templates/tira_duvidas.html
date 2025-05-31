@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ page_title }}</h1>
+    <p class="lead">Faça sua pergunta sobre Python e tentaremos respondê-la com a ajuda da IA!</p>
+
+    {% if erro_api %}
+    <div class="alert alert-danger" role="alert">
+        <strong>Erro na API:</strong> {{ erro_api }}
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('tira_duvidas') }}" class="mt-4">
+        <div class="mb-3">
+            <label for="pergunta" class="form-label">Sua Pergunta:</label>
+            <textarea class="form-control" id="pergunta" name="pergunta" rows="4" required>{{ pergunta or '' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Pergunta</button>
+    </form>
+
+    {% if resposta %}
+    <div class="mt-5">
+        <h3>Resposta:</h3>
+        <div class="card">
+            <div class="card-body bg-light">
+                {# Usar <pre> para manter a formatação, ou aplicar markdown se a API retornar markdown #}
+                {# A API do Gemini pode retornar markdown, então a tag <pre> é uma forma simples de exibir #}
+                {# Para uma renderização mais rica de markdown, você precisaria de uma biblioteca Python como Markdown e o filtro |safe #}
+                <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ resposta }}</pre>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{# Você pode adicionar JS aqui se quiser fazer a chamada da API de forma assíncrona (AJAX) no futuro #}
+{% endblock %}

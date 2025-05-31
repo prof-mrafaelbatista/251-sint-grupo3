@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4 text-center">Conheça a Equipe</h1>
+    <div class="row">
+        {% for membro in equipe %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if membro.foto %}
+                <img src="{{ url_for('static', filename=membro.foto) }}" class="card-img-top" alt="Foto de {{ membro.nome }}">
+                {% else %}
+                <img src="https://via.placeholder.com/150?text=Sem+Foto" class="card-img-top" alt="Sem foto">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ membro.nome }}</h5>
+                    {% if membro.github %}
+                    <a href="{{ membro.github }}" class="btn btn-primary" target="_blank">veja meu github</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
