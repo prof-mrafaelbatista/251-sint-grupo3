@@ -1,10 +1,38 @@
 [
   {
+    "termo": "atribuição",
+    "definicao": "Uma instrução que atribui um valor a uma variável."
+  },
+  {
+    "termo": "comentários",
+    "definicao": "Informações em um programa destinadas a outros programadores (ou qualquer pessoa que leia o texto fonte) que não têm efeito sobre a execução do programa."
+  },
+  {
+    "termo": "concatenar",
+    "definicao": "Juntar dois operandos pelas extremidades."
+  },
+  {
+    "termo": "diagrama de estado",
+    "definicao": "Uma instrução que atribui um valor a uma variável."
+  },
+  {
+    "termo": "função",
+    "definicao": "Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado."
+  },
+  {
     "termo": "git",
     "definicao": "ferramenta desenvolvida para revolucionar a maneira como desenvolvedores de código fazem o versionamento dos seus códigos, onde se é trackeado todo processo da feitura dos códigos e arquivos do projeto. curiosidade: foi criada por linus torvalds, o mesmo criador do kernel linux."
   },
   {
     "termo": "python",
     "definicao": "linguagem de programação que dá total liberdade e responsabilidade nas mãos do desenvolvedor. além disso é simples e de fácil aprendizado para que qualquer pessoa possa usar os super poderes da computação de maneira easysinha."
+  },
+  {
+    "termo": "script",
+    "definicao": "Um programa armazenado em um arquivo."
+  },
+  {
+    "termo": "variável",
+    "definicao": "Um nome que se refere a um valor."
   }
 ]
